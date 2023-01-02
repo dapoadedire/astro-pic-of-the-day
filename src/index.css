@@ -1,18 +1,6 @@
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+body {
+  background-color: rgb(12, 19, 9);
+  color: #fff;
 }
 
 header {
@@ -32,41 +20,40 @@ footer {
   border: 1px solid blue;
 }
 
-
-#root{
+#root {
   max-width: 900px;
   margin: 0 auto;
 }
 
-
-.form-container{
+.form-container {
   border: 1px solid yellow;
   display: flex;
-  
+  padding: 2rem;
 }
 
-form{
-  border: 1px solid purple;
-}
-
-form[role="search"]{
+form {
   border: 1px solid orange;
+  padding: 0;
+  margin: 0;
 }
 
-.form-container .random-button{
-  border: 1px solid pink;
-  padding: 1rem;
+form input[type="date"],
+form button,
+.form-container .random-button {
+  border: 1px solid #333;
+  padding: 0.5rem 1rem;
   margin: 1rem;
+  border-radius: 5px;
+  font-size: 2rem;
+  background-color: rgb(214, 211, 211);
   cursor: pointer;
 }
 
-img{
+img {
   border: 1px solid black;
   width: 100%;
   height: 100%;
-
 }
-
 
 .loading-spinner {
   display: flex;
@@ -74,6 +61,7 @@ img{
   justify-content: center;
   height: 100%;
   width: 100%;
+  padding: 2rem;
 }
 
 .loading-spinner__circle {
@@ -96,5 +84,7 @@ img{
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }

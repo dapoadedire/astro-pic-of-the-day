@@ -9,6 +9,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Result from "./Result";
 import LoadingSpinner from "./LoadingSpinner";
+import RandomAPOD from "./RandomAPOD";
 
 
 const todaysDate = changeDateFormat(currentDate());
@@ -54,7 +55,7 @@ const Home = () => {
     <>
       <Header />
       <main>
-        <div className="form">
+        
           <Form
             requestAPOD={requestAPOD}
             handleDateChange={handleDateChange}
@@ -62,12 +63,13 @@ const Home = () => {
             handleRandomButtonClick={handleRandomButtonClick}
             role="search"
           />
-        </div>
-        <div className="result">
+          <RandomAPOD handleRandomButtonClick={handleRandomButtonClick} />
+        
+        
           {
             loading ? <LoadingSpinner /> : <Result data={data} />
           }
-        </div>
+        
       </main>
 
       <Footer />

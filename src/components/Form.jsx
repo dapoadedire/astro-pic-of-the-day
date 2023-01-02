@@ -2,10 +2,13 @@ const Form = ({
   requestAPOD,
   date,
   handleDateChange,
-  handleRandomButtonClick,
 }) => {
   return (
-    <div className="form-container">
+    <>
+    
+    
+   
+    <div className="form">
       <form
         action=""
         onSubmit={(e) => {
@@ -24,8 +27,10 @@ const Form = ({
         </label>
         <button type="submit">Submit</button>
       </form>
-      <button className="random-button" onClick={handleRandomButtonClick}>Get Random APOD</button>
+      
     </div>
+    
+    </>
   );
 };
 
