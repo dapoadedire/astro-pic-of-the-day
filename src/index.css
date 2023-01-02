@@ -114,6 +114,7 @@ form{
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 ;
 }
 
 form input{
@@ -124,6 +125,10 @@ form input{
  
 }
 
+form input:focus{
+  outline: none;
+}
+
 .form-container button, form button{
   padding: 1rem;
   border: 1px solid rgba(51, 51, 51);
@@ -132,7 +137,12 @@ form input{
   color: #fff;
   font-weight: 700;
   cursor: pointer;
-  
+  transition: all 0.3s ease-in-out;
+}
+
+.form-container button:hover, form button:hover{
+  background-color: #fff;
+  color: #333;
 }
 
 @media (max-width: 768px) {
@@ -140,6 +150,6 @@ form input{
     flex-direction: column;
   }
   form{
-    margin: 1rem 0;
+    margin-bottom: 1rem;
   }
 }
