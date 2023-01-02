@@ -8,6 +8,7 @@ import Form from "./Form";
 
 import Result from "./Result";
 import LoadingSpinner from "./LoadingSpinner";
+import Footer from "./Footer";
 
 
 const todaysDate = changeDateFormat(currentDate());
@@ -61,7 +62,7 @@ const Home = () => {
         {loading ? <LoadingSpinner /> : <Result data={data} />}
       </main>
 
-      
+      <Footer />
     </>
   );
 };
