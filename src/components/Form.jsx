@@ -5,7 +5,7 @@ const Form = ({
   handleRandomButtonClick,
 }) => {
   return (
-    <div>
+    <div className="form-container">
       <form
         action=""
         onSubmit={(e) => {
@@ -24,7 +24,7 @@ const Form = ({
         </label>
         <button type="submit">Submit</button>
       </form>
-      <button onClick={handleRandomButtonClick}>Get Random APOD</button>
+      <button className="random-button" onClick={handleRandomButtonClick}>Get Random APOD</button>
     </div>
   );
 };

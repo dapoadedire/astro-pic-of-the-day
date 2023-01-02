@@ -5,12 +5,12 @@ This is a simple app that allows users to view the NASA Astronomy Picture of the
 ## Tech Stack
 
 - Vite React
-- Axios
+- fetch API
 - file-saver
 
 ## Lessons Learned
 
-- How to make API requests with Axios
+- How to make API requests with fetch API
 - How to use the file-saver library to download files
 - How to use the clipboard API to copy text to the clipboard
 
@@ -19,6 +19,7 @@ This is a simple app that allows users to view the NASA Astronomy Picture of the
 - View APOD
 - Download APOD image
 - Copy APOD explanation to clipboard
+- Generate random APOD
 
 ## Authors
 

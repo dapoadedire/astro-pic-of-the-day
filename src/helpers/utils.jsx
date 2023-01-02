@@ -28,7 +28,7 @@ export const changeDateFormat = (date) => {
 
 export const generateRandomDate = () => {
   const currentDate = new Date();
-  const startDate = new Date(1995, 11, 9);
+  const startDate = new Date(1995, 6, 16);
   const diffTime = currentDate - startDate;
   const randTime = Math.random() * diffTime;
   const randDate = new Date(startDate.getTime() + randTime);

@@ -17,8 +17,11 @@
 
 header {
   border: 1px solid green;
-  min-height: 100px;
+  min-height: 150px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 main {
@@ -27,4 +30,39 @@ main {
 
 footer {
   border: 1px solid blue;
+}
+
+
+#root{
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+.form-container{
+  border: 1px solid yellow;
+  display: flex;
+  
+}
+
+form{
+  border: 1px solid purple;
+}
+
+form[role="search"]{
+  border: 1px solid orange;
+}
+
+.form-container .random-button{
+  border: 1px solid pink;
+  padding: 1rem;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+img{
+  border: 1px solid black;
+  width: 100%;
+  height: 100%;
+
 }
