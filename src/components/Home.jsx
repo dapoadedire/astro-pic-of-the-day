@@ -5,12 +5,10 @@ import {
   generateRandomDate,
 } from "../helpers/utils";
 import Form from "./Form";
-import Header from "./Header";
-import Footer from "./Footer";
+
 import Result from "./Result";
 import LoadingSpinner from "./LoadingSpinner";
 import RandomAPOD from "./RandomAPOD";
-
 
 const todaysDate = changeDateFormat(currentDate());
 
@@ -21,10 +19,7 @@ const Home = () => {
 
   useEffect(() => {
     requestAPOD();
-
-
-
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [date]); // eslint-disable-line react-hooks/exhaustive-deps
   async function requestAPOD() {
     setLoading(true);
     try {
@@ -34,12 +29,10 @@ const Home = () => {
       const data = await response.json();
       setData(data);
       setLoading(false);
-     
     } catch (error) {
       console.error(error);
     }
   }
-
 
   const handleDateChange = (e) => {
     setDate(e.target.value);
@@ -48,31 +41,25 @@ const Home = () => {
   const handleRandomButtonClick = () => {
     const randomDate = generateRandomDate();
     setDate(randomDate);
-    requestAPOD();
   };
 
   return (
     <>
-      <Header />
+   
       <main>
-        
-          <Form
-            requestAPOD={requestAPOD}
-            handleDateChange={handleDateChange}
-            date={date}
-            handleRandomButtonClick={handleRandomButtonClick}
-            role="search"
-          />
-          <RandomAPOD handleRandomButtonClick={handleRandomButtonClick} />
-        
-        
-          {
-            loading ? <LoadingSpinner /> : <Result data={data} />
-          }
-        
+        <Form
+          requestAPOD={requestAPOD}
+          handleDateChange={handleDateChange}
+          date={date}
+          handleRandomButtonClick={handleRandomButtonClick}
+          role="search"
+        />
+        <RandomAPOD handleRandomButtonClick={handleRandomButtonClick} />
+
+        {loading ? <LoadingSpinner /> : <Result data={data} />}
       </main>
 
-      <Footer />
+      
     </>
   );
 };
