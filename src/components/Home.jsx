@@ -8,9 +8,10 @@ import Form from "./Form";
 
 import Result from "./Result";
 import LoadingSpinner from "./LoadingSpinner";
-import RandomAPOD from "./RandomAPOD";
+
 
 const todaysDate = changeDateFormat(currentDate());
+const API_KEY = import.meta.env.VITE_API_KEY
 
 const Home = () => {
   const [date, setDate] = useState(todaysDate);
@@ -24,7 +25,7 @@ const Home = () => {
     setLoading(true);
     try {
       const response = await fetch(
-        `https://api.nasa.gov/planetary/apod?api_key=ZXx5rFhwccQGJn0flyvH6MIypZ46LLwF5MpTa6cN&date=${date}`
+        `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&date=${date}`
       );
       const data = await response.json();
       setData(data);
@@ -55,7 +56,7 @@ const Home = () => {
           handleRandomButtonClick={handleRandomButtonClick}
           role="search"
         />
-        <RandomAPOD handleRandomButtonClick={handleRandomButtonClick} />
+        
 
         {loading ? <LoadingSpinner /> : <Result data={data} />}
       </main>

@@ -5,19 +5,25 @@ const Result = ({ data }) => {
   return (
     <>
       {data && !data.code && (
-        <div className="result">
-          <div className="left">
+        <div>
+          <div className="picture">
             <h2>Astromomy Picture Of The Day</h2>
             <figure>
               <img src={data.url} alt={data.title} />
+              <figcaption>
+                {data.copyright && <p>Image Credits and Copyright: {data.copyright}</p>}
+                <p className="title">
+                  {data.title} - {getReadableDate(data.date)}
+                </p>
+
+              </figcaption>
             </figure>
           
           </div>
 
-          <div className="right">
-            <h2>{data.title}</h2>
-            {data.copyright && <span>Image Credits and Copyright: {data.copyright}</span>}
-            <p>{getReadableDate(data.date)}</p>
+          <div className="explaination">
+            
+           
             <p >{data.explanation}</p>
             
           </div>

@@ -1,7 +1,9 @@
-const Form = ({ requestAPOD, date, handleDateChange }) => {
+import RandomAPOD from "./RandomAPOD";
+
+const Form = ({ requestAPOD, date, handleDateChange, handleRandomButtonClick }) => {
   return (
-    <>
-      <div className="form">
+    
+      <div className="form-container">
         <form
           action=""
           onSubmit={(e) => {
@@ -20,8 +22,9 @@ const Form = ({ requestAPOD, date, handleDateChange }) => {
           </label>
           <button type="submit">Submit</button>
         </form>
+      <RandomAPOD handleRandomButtonClick={handleRandomButtonClick} />
       </div>
-    </>
+    
   );
 };
 
