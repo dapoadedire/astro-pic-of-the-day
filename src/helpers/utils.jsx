@@ -1,5 +1,3 @@
-
-
 export const currentDate = () => {
   const date = new Date();
   const day = date.getDate();
@@ -32,12 +30,10 @@ export const generateRandomDate = () => {
   return randDate.toISOString().split("T")[0];
 };
 
-
 export const getReadableDate = (dateString) => {
   const dateObject = new Date(dateString);
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  const options = { year: "numeric", month: "long", day: "numeric" };
   const dateTimeFormat = new Intl.DateTimeFormat("en-US", options);
   const readableDate = dateTimeFormat.format(dateObject);
   return readableDate;
-}
-
+};
