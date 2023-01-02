@@ -66,3 +66,35 @@ img{
   height: 100%;
 
 }
+
+
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.loading-spinner__circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  border: 5px solid rgb(255, 255, 255);
+  border-top-color: #333;
+  animation: spin 1s linear infinite;
+}
+
+.loading-spinner__circle--inner {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #333;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

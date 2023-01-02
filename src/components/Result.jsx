@@ -4,6 +4,7 @@ import { downloadImage } from "../helpers/utils";
 const Result = ({ data }) => {
   const clipboardRef = useRef(null);
   const [copied, setCopied] = useState(false);
+  
 
   return (
     <>
