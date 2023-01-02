@@ -1,16 +1,15 @@
 # NASA APOD App
 
-This is a simple app that allows users to view the NASA Astronomy Picture of the Day (APOD). Users can also download the image and copy the image's explanation to their clipboard.
+This is a simple app that allows users to view the NASA Astronomy Picture of the Day (APOD). Users can also generate a random APOD.
 
 ## Tech Stack
 
 - Vite React
 - fetch API
-- file-saver
 
 ## Lessons Learned
 
-- How to make API requests with fetch API
+- How to make API requests with fetch API.
 - UseEffect, UseState hooks.
 
 ## Feature(s)
@@ -39,13 +38,13 @@ cd nasa-apod-app
 
 ## Install dependencies
 
-
 ```javascript
 npm install
 ```
-## Get API_KEY from api.nasa.gov and put it in a .env file foloowing the format in env.example.
 
-Start the development server
+### Get API_KEY from [api.nasa.gov](https://api.nasa.gov/) and put it in a .env file foloowing the format in env.example
+
+## Start the development server
 
 ```javascript
 npm run dev
