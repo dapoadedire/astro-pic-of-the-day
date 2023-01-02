@@ -11,14 +11,11 @@ This is a simple app that allows users to view the NASA Astronomy Picture of the
 ## Lessons Learned
 
 - How to make API requests with fetch API
-- How to use the file-saver library to download files
-- How to use the clipboard API to copy text to the clipboard
+- UseEffect, UseState hooks.
 
 ## Feature(s)
 
 - View APOD
-- Download APOD image
-- Copy APOD explanation to clipboard
 - Generate random APOD
 
 ## Authors
@@ -42,11 +39,11 @@ cd nasa-apod-app
 
 ## Install dependencies
 
-Copy code
 
 ```javascript
 npm install
 ```
+## Get API_KEY from api.nasa.gov and put it in a .env file foloowing the format in env.example.
 
 Start the development server
 
