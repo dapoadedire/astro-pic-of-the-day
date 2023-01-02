@@ -25,3 +25,13 @@ export const changeDateFormat = (date) => {
   }
   return `${year}-${month}-${day}`;
 };
+
+export const generateRandomDate = () => {
+  const currentDate = new Date();
+  const startDate = new Date(1995, 11, 9);
+  const diffTime = currentDate - startDate;
+  const randTime = Math.random() * diffTime;
+  const randDate = new Date(startDate.getTime() + randTime);
+
+  return randDate.toISOString().split("T")[0];
+};
