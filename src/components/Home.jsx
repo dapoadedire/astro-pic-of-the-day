@@ -19,7 +19,7 @@ const Home = () => {
 
   useEffect(() => {
     requestAPOD();
-  }, [date]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   async function requestAPOD() {
     setLoading(true);
     try {
@@ -41,6 +41,7 @@ const Home = () => {
   const handleRandomButtonClick = () => {
     const randomDate = generateRandomDate();
     setDate(randomDate);
+    requestAPOD();
   };
 
   return (
