@@ -3,8 +3,9 @@ export const currentDate = () => {
   const day = date.getDate();
   const month = date.getMonth() + 1;
   const year = date.getFullYear();
-  return `${day}/${month}/${year}`;
+  return changeDateFormat(`${day}/${month}/${year}`);
 };
+
 
 export const changeDateFormat = (date) => {
   const dateArray = date.split("/");
@@ -26,7 +27,6 @@ export const generateRandomDate = () => {
   const diffTime = currentDate - startDate;
   const randTime = Math.random() * diffTime;
   const randDate = new Date(startDate.getTime() + randTime);
-
   return randDate.toISOString().split("T")[0];
 };
 

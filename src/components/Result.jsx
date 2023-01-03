@@ -1,8 +1,21 @@
 import { getReadableDate } from "../helpers/utils";
-const Result = ({ data }) => {
+import LoadingSpinner from "./LoadingSpinner";
+const Result = ({ results }) => {
+
+  if (results.isLoading) {
+    return (
+      <LoadingSpinner />
+    );
+  }
+  if (results.isError) {
+    return <div>Error: {results.error.message}</div>;
+  }
+
+  const data = results.data;
+
   return (
     <>
-      {data && !data.code && (
+      
         <div>
           <div className="picture">
             <h2>Astromomy Picture Of The Day</h2>
@@ -29,13 +42,8 @@ const Result = ({ data }) => {
             <p>{data.explanation}</p>
           </div>
         </div>
-      )}
-      {data && data.code && (
-        <div>
-          <h2>Error.</h2>
-          <p>{data.msg}</p>
-        </div>
-      )}
+      
+     
     </>
   );
 };
