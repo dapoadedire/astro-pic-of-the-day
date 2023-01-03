@@ -1,10 +1,13 @@
 import { getReadableDate } from "../helpers/utils";
-import LoadingSpinner from "./LoadingSpinner";
 const Result = ({ results }) => {
 
   if (results.isLoading) {
     return (
-      <LoadingSpinner />
+      <div className="loading-spinner">
+        <div className="loading-spinner__circle">
+          <div className="loading-spinner__circle--inner"></div>
+        </div>
+      </div>
     );
   }
   if (results.isError) {
