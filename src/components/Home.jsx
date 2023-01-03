@@ -1,70 +1,55 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import {
-  changeDateFormat,
   currentDate,
   generateRandomDate,
+
 } from "../helpers/utils";
-import Form from "./Form";
+import { useQuery } from "@tanstack/react-query";
+
+import searchAPOD from "../helpers/searchAPOD";
 
 import Result from "./Result";
-import LoadingSpinner from "./LoadingSpinner";
-import Footer from "./Footer";
 
 
-const todaysDate = changeDateFormat(currentDate());
-const API_KEY = import.meta.env.VITE_API_KEY
+
+
+
 
 const Home = () => {
+  const todaysDate = currentDate();
   const [date, setDate] = useState(todaysDate);
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    requestAPOD();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
-  async function requestAPOD() {
-    setLoading(true);
-    try {
-      const response = await fetch(
-        `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&date=${date}`
-      );
-      const data = await response.json();
-      setData(data);
-      setLoading(false);
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-  const handleDateChange = (e) => {
-    setDate(e.target.value);
-  };
-
-  const handleRandomButtonClick = () => {
-    const randomDate = generateRandomDate();
-    setDate(randomDate);
-    requestAPOD();
-  };
-
-  return (
+  const results = useQuery(["apod", date], searchAPOD);
+  
+  return(
     <>
-   
-      <main>
-        <Form
-          requestAPOD={requestAPOD}
-          handleDateChange={handleDateChange}
-          date={date}
-          handleRandomButtonClick={handleRandomButtonClick}
-          role="search"
-        />
-        
+    <form 
+    onSubmit={(e) => {
+      e.preventDefault();
+      const date = e.target.date.value;
+      setDate(date);
+    }}
+    >
+      <label htmlFor="date">
+          <input type="date" name="date" id="date" max={todaysDate}
+            min="1995-06-16"
+            defaultValue={todaysDate}
+          />
+      </label>
+      <button type="submit">Search</button>
+    </form>
+    <button onClick={
+      () => {
+        const randomDate = generateRandomDate();
+        setDate(randomDate);
+      }
+    }>
+      Random
+    </button>
+    <Result results={results} />
 
-        {loading ? <LoadingSpinner /> : <Result data={data} />}
-      </main>
-
-      <Footer />
     </>
-  );
-};
+  )
 
+}
 export default Home;
