@@ -9,6 +9,7 @@ import { useQuery } from "@tanstack/react-query";
 import searchAPOD from "../helpers/searchAPOD";
 
 import Result from "./Result";
+import Footer from "./Footer";
 
 
 
@@ -22,6 +23,7 @@ const Home = () => {
   const results = useQuery(["apod", date], searchAPOD);
   
   return(
+    <>
     <main>
       <div className="form-container">
 
@@ -55,6 +57,9 @@ const Home = () => {
     <Result results={results} />
 
     </main>
+    <Footer />
+
+    </>
   )
 
 }

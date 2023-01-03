@@ -122,9 +122,6 @@ form #date::-webkit-calendar-picker-indicator {
   padding-left: 1rem;
 }
 
-/* form input:focus{
-  outline: none;
-} */
 
 .form-container button,
 form button {
@@ -187,7 +184,6 @@ footer ul li{
 }
 
 footer  a{
-  text-decoration: none;
   color: #333;
   font-weight: 700;
   transition: all 0.3s ease-in-out;
