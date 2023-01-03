@@ -22,7 +22,10 @@ const Home = () => {
   const results = useQuery(["apod", date], searchAPOD);
   
   return(
-    <>
+    <main>
+      <div className="form-container">
+
+      
     <form 
     onSubmit={(e) => {
       e.preventDefault();
@@ -38,17 +41,20 @@ const Home = () => {
       </label>
       <button type="submit">Search</button>
     </form>
-    <button onClick={
-      () => {
-        const randomDate = generateRandomDate();
-        setDate(randomDate);
-      }
-    }>
-      Random
-    </button>
+    <div className="button">
+          <button onClick={
+            () => {
+              const randomDate = generateRandomDate();
+              setDate(randomDate);
+            }
+          }>
+            Random
+          </button>
+    </div>
+      </div>
     <Result results={results} />
 
-    </>
+    </main>
   )
 
 }
