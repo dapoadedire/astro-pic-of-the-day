@@ -63,5 +63,3 @@ This project is used by the following people:
 
 ![astro-pic-of-the-day vercel app_](https://user-images.githubusercontent.com/95668340/210280150-12a45f73-a591-4df2-9b21-7ce680da3bf1.png)
 eenshot
-
-
