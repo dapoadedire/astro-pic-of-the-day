@@ -1,6 +1,5 @@
 import { getReadableDate } from "../helpers/utils";
 const Result = ({ results }) => {
-
   if (results.isLoading) {
     return (
       <div className="loading-spinner">
@@ -18,35 +17,32 @@ const Result = ({ results }) => {
 
   return (
     <>
-      
-        <div>
-          <div className="picture">
-            <h2>Astromomy Picture Of The Day</h2>
-            <figure>
-              {data.media_type === "video" ? (
-                <iframe src={data.url} title="a">
-                  {data.title}
-                </iframe>
-              ) : (
-                <img src={data.url} alt={data.title} />
+      <div>
+        <div className="picture">
+          <h2>Astromomy Picture Of The Day</h2>
+          <figure>
+            {data.media_type === "video" ? (
+              <iframe src={data.url} title="a">
+                {data.title}
+              </iframe>
+            ) : (
+              <img src={data.url} alt={data.title} />
+            )}
+            <figcaption>
+              {data.copyright && (
+                <p>Image Credits and Copyright: {data.copyright}</p>
               )}
-              <figcaption>
-                {data.copyright && <p>Image Credits and Copyright: {data.copyright}</p>}
-                <p className="title">
-                  {data.title} - {getReadableDate(data.date)}
-                </p>
-              </figcaption>
-            </figure>
-
-
-          </div>
-
-          <div className="explaination">
-            <p>{data.explanation}</p>
-          </div>
+              <p className="title">
+                {data.title} - {getReadableDate(data.date)}
+              </p>
+            </figcaption>
+          </figure>
         </div>
-      
-     
+
+        <div className="explaination">
+          <p>{data.explanation}</p>
+        </div>
+      </div>
     </>
   );
 };

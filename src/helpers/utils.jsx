@@ -6,7 +6,6 @@ export const currentDate = () => {
   return changeDateFormat(`${day}/${month}/${year}`);
 };
 
-
 export const changeDateFormat = (date) => {
   const dateArray = date.split("/");
   const year = dateArray[2];
